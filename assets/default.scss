@@ -1,0 +1,15 @@
+@import '~/node_modules/normalize.scss/normalize';
+
+// @include font-face(Stozl, '/fonts/Stolzl-Book', 300, normal, eot woff ttf);
+
+@import 'transitions.scss';
+
+body {
+  background-color: #000;
+  // font-family: 'Stozl', serif;
+  color: $text;
+  font-size: 14px;
+  width: 100%;
+  overflow-x: hidden;
+  font-weight: 300;
+}

@@ -1,18 +1,12 @@
+const { svgoPlugins } = require('./configs/svgo.config.js');
+const { styling } = require('./configs/styling.config.js');
+
 export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
   mode: 'universal',
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
   target: 'server',
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
+
+  ...styling,
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -27,14 +21,19 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
-   ** Global CSS
-   */
-  css: ['ant-design-vue/dist/antd.css'],
-  /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: ['@/plugins/antd-ui'],
+
+  svgSprite: {
+    input: '~/assets/icons',
+    svgoConfig() {
+      return {
+        plugins: svgoPlugins(),
+      };
+    },
+  },
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -53,6 +52,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/svg-sprite',
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Axios module configuration
@@ -64,4 +65,4 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
-}
+};
