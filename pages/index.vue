@@ -14,6 +14,9 @@
       <meeting :meeting="meeting" />
       <new-meeting />
     </div>
+    <div :class="b('last')">
+      <bullet-in :ads="ads" />
+    </div>
   </div>
 </template>
 
@@ -21,6 +24,8 @@
 export default {
   name: 'index-page',
   data() {
+    const preview =
+      'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg';
     return {
       notifications: [
         {
@@ -45,27 +50,84 @@ export default {
         timing: '23 часа 15 минут',
         users: [
           {
-            preview:
-              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+            preview,
           },
           {
-            preview:
-              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+            preview,
           },
           {
-            preview:
-              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+            preview,
           },
           {
-            preview:
-              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+            preview,
           },
           {
-            preview:
-              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+            preview,
           },
         ],
       },
+      ads: [
+        {
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+          title: 'Когда закончиться этот произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri faceteinermis. Eum dicta fuisset',
+          date: '13/12/2020',
+        },
+        {
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+          title: 'Когда закончиться этот произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri faceteinermis. Eum dicta fuisset',
+          date: '13/12/2020',
+        },
+        {
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+          title: 'Когда закончиться этот произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri faceteinermis. Eum dicta fuisset',
+          date: '13/12/2020',
+        },
+        {
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+          title: 'Когда закончиться этот произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri faceteinermis. Eum dicta fuisset',
+          date: '13/12/2020',
+        },
+        {
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+          title: 'Когда закончиться этот произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri faceteinermis. Eum dicta fuisset',
+          date: '13/12/2020',
+        },
+        {
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+          title: 'Когда закончиться этот произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri faceteinermis. Eum dicta fuisset',
+          date: '13/12/2020',
+        },
+      ],
     };
   },
 };
@@ -80,6 +142,7 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   padding-top: 78px;
+  padding-bottom: 78px;
   &__notifications {
     @include flex(flex-start, space-between);
     width: 100%;

@@ -6,7 +6,7 @@
     <div :class="b('label')">
       {{ label }}
     </div>
-    <div v-if="count" :class="b('count')">+{{ count }}</div>
+    <counter :active="active" :count="count" />
   </div>
 </template>
 
@@ -85,22 +85,6 @@ export default {
     margin-left: 24px;
     z-index: 5;
   }
-  &__count {
-    flex-shrink: 0;
-    margin-left: auto;
-    @include flex(center, center);
-    background-color: $additional;
-    border-radius: 27px;
-    width: 27px;
-    height: 27px;
-    color: $white;
-    font-family: 'Druk';
-    font-weight: 600;
-    font-size: 9px;
-    line-height: 109.3%;
-    z-index: 5;
-    transition: color ease 0.3s, background-color ease 0.3s;
-  }
 
   &--active {
     max-width: 415px;
@@ -119,10 +103,6 @@ export default {
         &:after {
           background-color: #fff;
         }
-      }
-      &__count {
-        background-color: #fff;
-        color: $additional;
       }
     }
   }

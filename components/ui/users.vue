@@ -1,9 +1,11 @@
 <template>
   <div :class="b('')">
     <div :class="b('user')">
-      <img :class="b('user-preview')" :src="users[1].preview" alt="" />
+      <img :class="b('user-preview')" :src="users[0].preview" alt="" />
     </div>
-    <div :class="b('user', { empty: true })">+{{ users.length - 1 }}</div>
+    <div v-if="users.length > 1" :class="b('user', { empty: true })">
+      +{{ users.length - 1 }}
+    </div>
   </div>
 </template>
 
@@ -15,10 +17,6 @@ export default {
       type: Array,
       default: () => [],
     },
-    // sized: {
-    //   type: Boolean,
-    //   default: false,
-    // },
   },
 };
 </script>
