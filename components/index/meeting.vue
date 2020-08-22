@@ -10,7 +10,7 @@
         <p :class="b('info-timing')">Осталось: {{ meeting.timing }}</p>
         <users :users="meeting.users" />
       </div>
-      <pagination :class="b('pagination')" />
+      <pagination :class="b('pagination')" :dark="false" />
     </div>
     <div :class="b('info_button')">
       <svg-icon name="info" />
@@ -48,6 +48,7 @@ export default {
   padding-left: 70px;
   padding-right: 70px;
   color: $white;
+  transition: background-color ease 0.3s;
   &__mark {
     @include flex(center, center);
     flex-shrink: 0;
@@ -110,16 +111,37 @@ export default {
     position: absolute;
     z-index: 5;
     pointer-events: none;
+    transition: transform ease 0.4s 0.1s;
     &--side {
       &-left {
         bottom: 0%;
         left: 0;
-        //transform: translateY(-50%);
+        transform: translate(0%, 0);
       }
       &-right {
         right: 0;
         top: 0;
-        //transform: translateY(50%);
+        transform: translate(0%, 0);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $accent-strong;
+    .meeting {
+      &__decor {
+        &--side {
+          &-left {
+            bottom: 0%;
+            left: 0;
+            transform: scale(1.1);
+          }
+          &-right {
+            right: 0;
+            top: 0;
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }

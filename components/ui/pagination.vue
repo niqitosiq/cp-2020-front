@@ -1,5 +1,5 @@
 <template>
-  <div :class="b('', { styling })">
+  <div :class="b('', { dark })">
     <div :class="b('driver')"></div>
     <div v-for="dot in dots" :key="dot" :class="b('dot')"></div>
   </div>
@@ -9,9 +9,9 @@
 export default {
   name: 'pagination',
   props: {
-    styling: {
-      type: String,
-      default: '',
+    dark: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -42,7 +42,7 @@ export default {
     top: 0;
     border-radius: 15px;
   }
-  &--styling {
+  &--dark {
     .pagination {
       &__dot {
         background-color: rgba(5, 131, 127, 0.6);

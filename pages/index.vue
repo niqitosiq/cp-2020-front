@@ -220,8 +220,8 @@ export default {
   @include flex(stretch, flex-start);
 }
 .index-page {
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 78px;
   padding-bottom: 78px;
   &__notifications {

@@ -11,7 +11,7 @@
         <ui-select :value="house" :options="houses" />
       </div>
       <bullet-ad v-for="ad in topAds" :key="ad.id" :class="b('ad')" :ad="ad" />
-      <div :class="b('pagination')"><pagination :styling="dark" /></div>
+      <div :class="b('pagination')"><pagination :dark="true" /></div>
       <ui-button>
         Создать новое объявление
       </ui-button>
