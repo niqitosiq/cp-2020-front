@@ -24,7 +24,7 @@
         <component :is="currentForm" v-model="data" />
       </transition>
 
-      <div :class="b('button')" @click="nextStep">Следущий шаг</div>
+      <div :class="b('button')" @click="nextStep">{{ buttonText }}</div>
     </div>
   </div>
 </template>
@@ -34,6 +34,7 @@ import form0 from '@/components/forms/form0.vue';
 import form1 from '@/components/forms/form1.vue';
 import form2 from '@/components/forms/form2.vue';
 import form3 from '@/components/forms/form3.vue';
+import form4 from '@/components/forms/form4.vue';
 
 export default {
   name: 'new-page',
@@ -42,6 +43,7 @@ export default {
     form1,
     form2,
     form3,
+    form4,
   },
   data() {
     return {
@@ -59,6 +61,15 @@ export default {
   computed: {
     currentForm() {
       return `form-${this.stepNum}`;
+    },
+    isDone() {
+      return this.stepNum === this.steps.length - 1;
+    },
+    buttonText() {
+      if (this.isDone) {
+        return 'Готово';
+      }
+      return 'Следущий шаг';
     },
   },
   methods: {
