@@ -50,6 +50,7 @@ export default {
   color: $white;
   &__mark {
     @include flex(center, center);
+    flex-shrink: 0;
     margin-right: 60px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 18px;
@@ -63,6 +64,7 @@ export default {
   }
   &__info_button {
     margin-left: auto;
+    flex-shrink: 0;
     @include flex(center, center);
     background: rgba(255, 255, 255, 0.4);
     width: 68px;
@@ -75,7 +77,7 @@ export default {
     }
   }
   &__descr {
-    min-width: 580px;
+    min-width: 300px;
     h1 {
       color: $white;
       font-family: Druk;
@@ -107,6 +109,7 @@ export default {
   &__decor {
     position: absolute;
     z-index: 5;
+    pointer-events: none;
     &--side {
       &-left {
         bottom: 0%;

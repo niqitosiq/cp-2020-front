@@ -55,6 +55,7 @@ export default {
     @include flex(center, center);
     background-color: $additional-hoverable;
     z-index: 5;
+    flex-shrink: 0;
     svg {
       fill: $additional-light;
       width: 17px;
@@ -85,6 +86,7 @@ export default {
     z-index: 5;
   }
   &__count {
+    flex-shrink: 0;
     margin-left: auto;
     @include flex(center, center);
     background-color: $additional;

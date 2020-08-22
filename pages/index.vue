@@ -12,6 +12,7 @@
     </div>
     <div :class="b('meetings', 'row')">
       <meeting :meeting="meeting" />
+      <new-meeting />
     </div>
   </div>
 </template>
@@ -71,11 +72,14 @@ export default {
 </script>
 
 <style lang="scss">
+.row {
+  margin-bottom: 30px;
+  @include flex(stretch, flex-start);
+}
 .index-page {
+  margin-left: 20px;
+  margin-right: 20px;
   padding-top: 78px;
-  .row {
-    margin-bottom: 30px;
-  }
   &__notifications {
     @include flex(flex-start, space-between);
     width: 100%;
