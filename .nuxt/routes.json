@@ -1,0 +1,15 @@
+[
+  {
+    "name": "icons-list",
+    "path": "/_icons",
+    "component": "/home/niqitosiq/cp-2020/cp-2020-front/.nuxt/nuxt-svg-sprite-icons-list.vue",
+    "_name": "_7b93795f"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/niqitosiq/cp-2020/cp-2020-front/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_065e3edc"
+  }
+]
