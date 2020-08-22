@@ -24,10 +24,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['@/plugins/antd-ui'],
+  plugins: ['@/plugins/antd-ui', '@/plugins/bem'],
 
   svgSprite: {
     input: '~/assets/icons',
+    spriteClassPrefix: '',
     svgoConfig() {
       return {
         plugins: svgoPlugins(),

@@ -1,15 +1,28 @@
 @import '~/node_modules/normalize.scss/normalize';
 
-// @include font-face(Stozl, '/fonts/Stolzl-Book', 300, normal, eot woff ttf);
+@include font-face(Druk, '/fonts/druk', 600, normal, eot woff ttf);
+@include font-face(Montserrat, '/fonts/monreg', 300, normal, eot woff ttf);
+@include font-face(Montserrat, '/fonts/monsemi', 500, normal, eot woff ttf);
+@include font-face(Montserrat, '/fonts/monbold', 600, normal, eot woff ttf);
 
 @import 'transitions.scss';
 
 body {
-  background-color: #000;
-  // font-family: 'Stozl', serif;
-  color: $text;
-  font-size: 14px;
+  background-color: #f5f6fa;
+  font-family: 'Montserrat', serif !important;
+  color: $text !important;
+  font-size: 13px;
   width: 100%;
   overflow-x: hidden;
   font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  max-width: 1390px;
+  margin: 0 auto;
+}
+
+svg {
+  fill: $text;
 }
