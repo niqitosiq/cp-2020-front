@@ -1,6 +1,6 @@
 <template>
   <div :class="b('')">
-    <sidebar />
+    <sidebar :class="b('sidebar')" />
     <Nuxt />
   </div>
 </template>

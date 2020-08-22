@@ -17,6 +17,7 @@
     <div :class="b('last')">
       <bullet-in :ads="ads" />
       <appeals :appeals="appeals" :class="b('appeals')" />
+      <statistic />
     </div>
   </div>
 </template>
