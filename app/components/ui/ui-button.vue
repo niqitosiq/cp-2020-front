@@ -1,5 +1,5 @@
 <template>
-  <div :class="b('')">
+  <div :class="b('')" @click="$emit('click')">
     <slot />
   </div>
 </template>
