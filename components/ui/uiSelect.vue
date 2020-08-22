@@ -4,6 +4,7 @@
     show-search
     :placeholder="placeholder"
     :filter-option="filterOption"
+    :default-value="value"
     @change="handleChange"
   >
     <a-select-option v-for="option in options" :key="option" :value="option">
@@ -23,6 +24,10 @@ export default {
     options: {
       type: Array,
       default: () => [],
+    },
+    value: {
+      type: String,
+      default: '',
     },
   },
   methods: {

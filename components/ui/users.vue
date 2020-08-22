@@ -1,5 +1,5 @@
 <template>
-  <div :class="b('')">
+  <div :class="b('', { small })">
     <div :class="b('user')">
       <img :class="b('user-preview')" :src="users[0].preview" alt="" />
     </div>
@@ -16,6 +16,10 @@ export default {
     users: {
       type: Array,
       default: () => [],
+    },
+    small: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -43,6 +47,14 @@ export default {
       font-weight: 600;
       z-index: 3;
       transform: translateX(-14px);
+    }
+  }
+  &--small {
+    .users {
+      &__user {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }

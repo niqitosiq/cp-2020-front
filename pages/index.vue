@@ -16,6 +16,7 @@
     </div>
     <div :class="b('last')">
       <bullet-in :ads="ads" />
+      <appeals :appeals="appeals" :class="b('appeals')" />
     </div>
   </div>
 </template>
@@ -128,6 +129,85 @@ export default {
           date: '13/12/2020',
         },
       ],
+      appeals: [
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+        {
+          title: 'Когда закончится произвол',
+          text:
+            'Sed affert delenit ea. Nam at ferri facete inermis. Eum dicta fuisset ',
+          location: 'Дом 32',
+          date: '13/12/2020',
+          author: {
+            preview,
+            name: 'Никита Штанько',
+          },
+        },
+      ],
     };
   },
 };
@@ -146,6 +226,9 @@ export default {
   &__notifications {
     @include flex(flex-start, space-between);
     width: 100%;
+  }
+  &__last {
+    @include flex(flex-start);
   }
 }
 </style>

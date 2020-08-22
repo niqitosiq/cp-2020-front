@@ -8,7 +8,7 @@
     </div>
     <div :class="b('content')">
       <div :class="b('content-filter')">
-        <ui-select v-model="house" :options="houses" />
+        <ui-select :value="house" :options="houses" />
       </div>
       <bullet-ad v-for="ad in topAds" :key="ad.id" :class="b('ad')" :ad="ad" />
       <div :class="b('pagination')"><pagination :styling="dark" /></div>
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      house: '',
+      house: 'Дом 1',
       houses: ['Дом 1', 'Дом 2', 'Дом 3', 'Дом 4'],
     };
   },
