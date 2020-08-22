@@ -2,7 +2,7 @@ const { svgoPlugins } = require('./configs/svgo.config.js');
 const { styling } = require('./configs/styling.config.js');
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   target: 'server',
 
   ...styling,
