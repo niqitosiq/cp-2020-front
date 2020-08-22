@@ -1,6 +1,6 @@
 <template>
   <div :class="b('', 'container')">
-    <div :class="b('notifications')">
+    <div :class="b('notifications', 'row')">
       <notification-block
         v-for="notify in notifications"
         :key="notify.label"
@@ -9,6 +9,9 @@
         :count="notify.count"
         :active="notify.active"
       />
+    </div>
+    <div :class="b('meetings', 'row')">
+      <meeting :meeting="meeting" />
     </div>
   </div>
 </template>
@@ -36,6 +39,32 @@ export default {
           count: 6,
         },
       ],
+      meeting: {
+        label: 'Собрание ОСС №2',
+        timing: '23 часа 15 минут',
+        users: [
+          {
+            preview:
+              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+          },
+          {
+            preview:
+              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+          },
+          {
+            preview:
+              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+          },
+          {
+            preview:
+              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+          },
+          {
+            preview:
+              'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+          },
+        ],
+      },
     };
   },
 };
@@ -44,6 +73,9 @@ export default {
 <style lang="scss">
 .index-page {
   padding-top: 78px;
+  .row {
+    margin-bottom: 30px;
+  }
   &__notifications {
     @include flex(flex-start, space-between);
     width: 100%;
