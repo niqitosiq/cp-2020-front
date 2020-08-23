@@ -5,6 +5,7 @@
         <h2>Повестка дня</h2>
         <div :class="b('text')">
           <ui-textarea
+            v-model="text"
             placeholder="Сформулируйте вопрос для сообщения о проведении ОСС"
           />
         </div>
@@ -43,7 +44,12 @@
 export default {
   name: 'form-4',
   data() {
-    return { triggers: ['Стены', 'Ремонт', 'ЖКХ'], problems: [] };
+    return { triggers: ['Стены', 'Ремонт', 'ЖКХ'], problems: [], text: '' };
+  },
+  watch: {
+    text(val) {
+      this.$store.commit('increment', val);
+    },
   },
   methods: {
     addProblem() {

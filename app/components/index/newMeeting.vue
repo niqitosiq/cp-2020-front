@@ -1,9 +1,9 @@
 <template>
-  <div :class="b('')">
+  <nuxt-link to="/new" :class="b('')">
     <svg-icon name="plus" />
     <h3>Создать новое собрание</h3>
     <p>С жильцами дома</p>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>

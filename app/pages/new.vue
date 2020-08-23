@@ -76,7 +76,13 @@ export default {
     setStep(step) {
       this.stepNum = step;
     },
-    nextStep() {
+    async nextStep() {
+      if (this.isDone) {
+        const { data } = await this.$axios.post('/discuss/create', {
+          descr: this.$store.state.text,
+        });
+        this.$router.push(`/voting/${data._id}`);
+      }
       this.stepNum++;
     },
   },

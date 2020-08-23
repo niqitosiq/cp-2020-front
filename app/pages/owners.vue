@@ -1,9 +1,9 @@
 <template>
   <div :class="b('', 'container')">
-    <div :class="b('back')">
+    <nuxt-link to="/" :class="b('back')">
       <div :class="b('back-icon')"><svg-icon name="back" /></div>
       <span>Назад</span>
-    </div>
+    </nuxt-link>
     <div :class="b('header')">
       Добавление собственников
     </div>
@@ -19,7 +19,7 @@
       <div v-if="users.length" :class="b('list')">
         <ul>
           <li v-for="user in users" :key="user.name">
-            <b>{{ user.name }} </b> - {{ user.voteVolume }} кв. м.
+            <b>{{ user.name }} </b> - {{ user.voteValue }} кв. м.
             <small>{{ user.phone }}</small>
           </li>
         </ul>
@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss">
 .owners-page {
-  padding-top: 100px;
+  padding-top: 78px;
   &__back {
     @include flex(center);
     cursor: pointer;
