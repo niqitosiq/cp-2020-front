@@ -20,6 +20,9 @@
       <div :class="b('counting')">
         <h2 :class="b('vote-header')">Подсчёт голосов</h2>
         <div :class="b('table')">
+          <div v-if="!voting.length" :class="b('center')">
+            Ещё никто не проголосовал
+          </div>
           <div v-for="vote in voting" :key="vote.uid" :class="b('table-row')">
             <div :class="b('table-cell')">
               {{ vote.uid }} ({{ vote.voteValue }})
@@ -52,6 +55,7 @@ export default {
     const preview =
       'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg';
     return {
+      reloadInterval: null,
       voting: [],
       total: 0,
       meeting: {
@@ -97,16 +101,24 @@ export default {
   },
   async mounted() {
     const { id } = this.$route.params;
-    const { data } = await this.$axios.get(`/ballot/${id}`);
+    let voting = await this.update(id);
     const { data: total } = await this.$axios.get(`/user/totalArea`);
-    this.voting = data || [];
+    this.voting = voting || [];
     this.total = parseInt(total);
+
+    this.reloadInterval = setInterval(async () => {
+      voting = await this.update(id);
+      this.voting = voting || [];
+    }, 10000);
   },
   methods: {
     translate(status) {
       if (status === 'Y') return 'Да.';
       if (status === 'N') return 'Нет.';
       return 'Воздержался.';
+    },
+    async update(id) {
+      return (await this.$axios.get(`/ballot/${id}`)).data;
     },
   },
 };

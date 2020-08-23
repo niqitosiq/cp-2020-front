@@ -74,6 +74,7 @@ export default {
       width: 70px;
       object-fit: cover;
       height: 60px;
+      border-radius: 5px;
     }
   }
   &__name {
